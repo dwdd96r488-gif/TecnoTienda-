@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA SIERRA CAUCA </title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+	<div class="encabezado">
+		<h1> Tecno Tienda </h1>
+		<h4>  Objetos Tecnologicos </h4>
+		<div class="menu">
+		<ul>
+					<li> <a href="consolas.html "> consolas</a> </li>
+					<li> <a href="index.html"> index  </a> </li>
+		</ul>
+		<h1>Historia</h1>
+		<div class="p">
+		<p>
+		Durante los años 90, los computadores evolucionaron y comenzaron a ofrecer mejores gráficos, procesadores más rápidos y tarjetas gráficas especializadas. Esto permitió desarrollar videojuegos más avanzados y con mejores experiencias visuales.
+En los años 2000, las PC Gamer se hicieron más populares gracias a los juegos en línea, los avances en hardware y la posibilidad de personalizar los computadores con componentes más potentes.
+Actualmente, las PC Gamer cuentan con procesadores de alto rendimiento, tarjetas gráficas avanzadas, sistemas de refrigeración, iluminación RGB y diseños futuristas. Además, permiten disfrutar videojuegos con gráficos de alta calidad y también se utilizan para crear contenido, editar videos y realizar trabajos exigentes.
+En conclusión, las PC Gamer han evolucionado de computadores sencillos a equipos tecnológicos de alto rendimiento, convirtiéndose en una parte importante del mundo de los videojuegos y la tecnología.
+		</p>
+		</div>
+		</div>	 
+		
+	<div class="h1">
+	<h2> Objetos Electronicos </h3>
+	</div>
+	
+	
+	<div class="caja2">
+		<div class="caja">
+			<img src="pc1.jpg">
+			<h2> Ryzen </h2>
+			<p> Precio: 120.000 </p>
+			<button onclick="agregar('Ryzen',120000)">
+					Agregar Al Carrito
+			</button>
+		</div>
+		
+		<div class="caja">
+		<img src="pc2.jpg">
+			<h2> titan elite </h2>
+			<p>Precio: 80.000 </p>
+			<button onclick="agregar('Titan elite',80000)">
+					Agregar Al Carrito
+			</button>
+		</div>
+			
+		<div class="caja"> 
+		<img src="pc3.jpg">
+			<h2> esencial </h2>
+			<p>Precio: 50.000 </p>
+			<button onclick="agregar('esencial',50000)">
+					Agregar Al Carrito
+			</button>
+		</div>
+					
+	</div>		
+	
+	<div class="carrito">
+		<h2> Mi Carrito De Compras </h2>
+			<ul id="lista-carrito"></ul>
+			
+			<h3>Total: $<span id="total">0</span></h3>
+			
+			<button onclick="vaciarCarrito()">
+					Vaciar carrito
+			</button>
+			
+	</div>	
+
+	<script src="script.js"></script>
+	
+</body>
+</html>

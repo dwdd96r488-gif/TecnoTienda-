@@ -1,0 +1,400 @@
+
+/* CONFIGURACIÓN GENERAL */
+body {
+    background-color: #DFF3FF;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* ENCABEZADO */
+.encabezado {
+    background-color: #39FF14;
+    color: red;
+    text-align: center;
+    padding: 10px;
+}
+
+/* TÍTULO */
+.h1 {
+    text-align: center;
+}
+
+/* CONTENEDOR DE PRODUCTOS */
+.caja2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* CAJAS DE PRODUCTOS */
+.caja {
+    border: 4px solid #007BFF;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    padding: 15px;
+    transition: 0.3s;
+    background-color: white;
+}
+
+/* IMÁGENES */
+.caja img {
+    background-color: #39FF14;
+    padding: 10px;
+    margin: 10px auto;
+    border: 2px solid gray;
+    width: 150px;
+    height: 90px;
+    object-fit: contain;
+    display: block;
+}
+
+/* BOTONES */
+button {
+    background-color: #176b87;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #C8102E;
+}
+
+/* CARRITO */
+.carrito {
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #176b87;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.carrito ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* TÍTULOS */
+.h2 {
+    text-align: center;
+}
+
+/* MENÚ */
+.menu ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+    margin:20px;
+    padding:20px;
+}
+
+.menu li a {
+    color:black;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 30px 30px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.menu li a:hover {
+    background:#000000;
+    color: white;
+}
+.menu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    list-style: none;
+    gap: 30px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.menu li {
+    white-space: nowrap;
+}
+/* Galería circular 3D */
+.galeria-seccion {
+    position: relative;
+    min-height: 500px;
+    padding: 50px 20px;
+    overflow: hidden;
+    text-align: center;
+    background:
+        radial-gradient(circle at left, rgba(107, 230, 255, 0.25), transparent 25%),
+        radial-gradient(circle at right, rgba(183, 108, 255, 0.25), transparent 25%),
+        #080b1a;
+}
+
+.galeria-seccion h2 {
+    position: relative;
+    z-index: 2;
+    margin: 0 0 60px;
+    color: white;
+    font-size: 32px;
+    text-shadow:
+        0 0 8px #ffffff,
+        0 0 18px #42d9ff,
+        0 0 30px #795cff;
+}
+
+/* Brillo celestial en ambos lados */
+.galeria-seccion::before,
+.galeria-seccion::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 180px;
+    height: 340px;
+    border-radius: 50%;
+    filter: blur(35px);
+    transform: translateY(-50%);
+    opacity: 0.75;
+    pointer-events: none;
+    animation: brilloCelestial 3s ease-in-out infinite alternate;
+}
+
+.galeria-seccion::before {
+    left: -90px;
+    background: radial-gradient(
+        ellipse,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(75, 220, 255, 0.75) 25%,
+        rgba(80, 102, 255, 0.35) 55%,
+        transparent 75%
+    );
+}
+
+.galeria-seccion::after {
+    right: -90px;
+    background: radial-gradient(
+        ellipse,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(208, 116, 255, 0.75) 25%,
+        rgba(86, 123, 255, 0.35) 55%,
+        transparent 75%
+    );
+}
+
+.galeria-3d {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 290px;
+    perspective: 1000px;
+}
+
+.anillo {
+    position: relative;
+    width: 190px;
+    height: 130px;
+    transform-style: preserve-3d;
+    animation: girarGaleria 18s linear infinite;
+}
+
+.anillo:hover {
+    animation-play-state: paused;
+}
+
+.imagen-galeria {
+    position: absolute;
+    inset: 0;
+    transform:
+        rotateY(calc(var(--i) * 60deg))
+        translateZ(310px);
+    transition: filter 0.35s ease;
+}
+
+.imagen-galeria img {
+    width: 190px;
+    height: 130px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    border-radius: 16px;
+    box-shadow:
+        0 0 12px rgba(255, 255, 255, 0.7),
+        0 0 25px rgba(73, 211, 255, 0.55);
+    cursor: pointer;
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* La imagen se realza al pasar el cursor */
+.imagen-galeria img:hover {
+    transform: scale(1.25);
+    filter: brightness(1.2) saturate(1.25);
+    box-shadow:
+        0 0 15px white,
+        0 0 35px #49dfff,
+        0 0 60px #9f5cff;
+}
+
+@keyframes girarGaleria {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+/* Galería circular 3D */
+.galeria-seccion {
+    position: relative;
+    min-height: 500px;
+    padding: 50px 20px;
+    overflow: hidden;
+    text-align: center;
+    background:
+        radial-gradient(circle at left, rgba(107, 230, 255, 0.25), transparent 25%),
+        radial-gradient(circle at right, rgba(183, 108, 255, 0.25), transparent 25%),
+        #080b1a;
+}
+
+.galeria-seccion h2 {
+    position: relative;
+    z-index: 2;
+    margin: 0 0 60px;
+    color: white;
+    font-size: 32px;
+    text-shadow:
+        0 0 8px #ffffff,
+        0 0 18px #42d9ff,
+        0 0 30px #795cff;
+}
+
+/* Brillo celestial en ambos lados */
+.galeria-seccion::before,
+.galeria-seccion::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 180px;
+    height: 340px;
+    border-radius: 50%;
+    filter: blur(35px);
+    transform: translateY(-50%);
+    opacity: 0.75;
+    pointer-events: none;
+    animation: brilloCelestial 3s ease-in-out infinite alternate;
+}
+
+.galeria-seccion::before {
+    left: -90px;
+    background: radial-gradient(
+        ellipse,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(75, 220, 255, 0.75) 25%,
+        rgba(80, 102, 255, 0.35) 55%,
+        transparent 75%
+    );
+}
+
+.galeria-seccion::after {
+    right: -90px;
+    background: radial-gradient(
+        ellipse,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(208, 116, 255, 0.75) 25%,
+        rgba(86, 123, 255, 0.35) 55%,
+        transparent 75%
+    );
+}
+
+.galeria-3d {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 290px;
+    perspective: 1000px;
+}
+
+.anillo {
+    position: relative;
+    width: 190px;
+    height: 130px;
+    transform-style: preserve-3d;
+    animation: girarGaleria 18s linear infinite;
+}
+
+.anillo:hover {
+    animation-play-state: paused;
+}
+
+.imagen-galeria {
+    position: absolute;
+    inset: 0;
+    transform:
+        rotateY(calc(var(--i) * 60deg))
+        translateZ(310px);
+    transition: filter 0.35s ease;
+}
+
+.imagen-galeria img {
+    width: 190px;
+    height: 130px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    border-radius: 16px;
+    box-shadow:
+        0 0 12px rgba(255, 255, 255, 0.7),
+        0 0 25px rgba(73, 211, 255, 0.55);
+    cursor: pointer;
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* La imagen se realza al pasar el cursor */
+.imagen-galeria img:hover {
+    transform: scale(1.25);
+    filter: brightness(1.2) saturate(1.25);
+    box-shadow:
+        0 0 15px white,
+        0 0 35px #49dfff,
+        0 0 60px #9f5cff;
+}
+
+@keyframes girarGaleria {
+    from {
+        transform: rotateY(0deg);
+    }
+
+to {
+        transform: rotateY(360deg);
+    }
+html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    background-color: #000000;
+}
+
+body {
+    background-image:
+        radial-gradient(circle at 20% 20%, #101d40, transparent 35%),
+        radial-gradient(circle at 80% 80%, #251044, transparent 35%),
+        linear-gradient(135deg, #000000, #080d1c, #000000);
+
+    background-attachment: fixed;
+    color: white;
+}
+
+p {
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: white;
+}
